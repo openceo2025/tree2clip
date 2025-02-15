@@ -1,0 +1,6 @@
+# Python キャッシュファイル
+__pycache__/
+*.pyc
+
+# Egg-infoディレクトリ
+*.egg-info/
