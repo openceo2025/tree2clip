@@ -11,10 +11,10 @@
 
 ## Installation
 
-To install from PyPI:
+Since tree2clip is not published on PyPI yet, you can install it directly from GitHub:
 
 ```bash
-pip install tree2clip
+pip install git+https://github.com/openceo2025/tree2clip.git
 ```
 
 For development purposes, install in editable mode:
