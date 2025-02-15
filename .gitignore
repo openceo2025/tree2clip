@@ -1,6 +1,6 @@
-# Python キャッシュファイル
+# Python cache files
 __pycache__/
 *.pyc
 
-# Egg-infoディレクトリ
+# Egg-info directories
 *.egg-info/

@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="tree2clip",
     version="0.1.0",
-    description="ディレクトリのツリー表示とファイル内容をクリップボードにコピーするツール",
+    description="A tool to display a directory tree and copy file contents to the clipboard.",
     author="Your Name",
     author_email="your.email@example.com",
     packages=find_packages(),
