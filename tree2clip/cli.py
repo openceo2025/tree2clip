@@ -13,10 +13,10 @@ def generate_tree(root, prefix=""):
     count = len(entries)
     for i, entry in enumerate(entries):
         path = os.path.join(root, entry)
-        is_last = (i == count - 1)
+        is_last = i == count - 1
         connector = "└── " if is_last else "├── "
         lines.append(prefix + connector + entry)
-        if os.path.isdir(path):
+        if os.path.isdir(path) and not os.path.islink(path):
             extension = "    " if is_last else "│   "
             lines.extend(generate_tree(path, prefix + extension))
     return lines
@@ -88,7 +88,10 @@ def main():
     
     # Generate the directory tree
     tree_lines = generate_tree(target_dir)
-    tree_text = "\n".join([os.path.basename(target_dir)] + tree_lines)
+    root_name = os.path.basename(os.path.normpath(target_dir))
+    if not root_name:
+        root_name = os.sep
+    tree_text = "\n".join([root_name] + tree_lines)
     
     # Collect file contents
     if args.no_content:
